@@ -1,5 +1,13 @@
 const Duration = ({ duration }) => {
-  return <p style={{ textAlign: "center" }}>Duration: {duration} minutes</p>;
+  {
+    return duration != 0 ? (
+      <p style={{ textAlign: "center" }}>Duration: {duration} minutes</p>
+    ) : (
+      <></>
+    );
+  }
+
+  return;
 };
 
 export default Duration;
