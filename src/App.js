@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import StreamNavbar from "./pages/home/components/Navbar";
+import StreamNavbar from "./pages/Navbar";
 import Index from "./pages/home/Index";
 import MoviePage from "./pages/details/MoviePage";
 const API_URL = "https://api.themoviedb.org/3";
