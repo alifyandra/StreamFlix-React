@@ -29,7 +29,7 @@ const Similar = ({ similar, setCurrPage, ownedMovies }) => {
                 <Card.Title>{sim.title}</Card.Title>
                 <Card.Text>
                   {!ownedMovies.includes(sim.id) ? (
-                    <>Rp. {getPrice(sim.vote_average)}</>
+                    <>Rp. {getPrice(sim)}</>
                   ) : (
                     <span style={{ color: "green" }}>Owned</span>
                   )}

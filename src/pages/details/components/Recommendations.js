@@ -30,7 +30,7 @@ const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
                 <Card.Title>{rec.title}</Card.Title>
                 <Card.Text>
                   {!ownedMovies.includes(rec.id) ? (
-                    <>Rp. {getPrice(rec.vote_average)}</>
+                    <>Rp. {getPrice(rec)}</>
                   ) : (
                     <span style={{ color: "green" }}>Owned</span>
                   )}
