@@ -1,21 +1,11 @@
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import getPrice from "../../../utils/getPrice";
 
 const Movie = ({ movie }) => {
   const img_base_url = "https://image.tmdb.org/t/p/w500/";
-  function getPrice() {
-    let rating = movie.vote_average;
-    if (rating < 3) {
-      return 3500;
-    } else if (rating < 6) {
-      return 8250;
-    } else if (rating < 8) {
-      return 16350;
-    } else {
-      return 21250;
-    }
-  }
+
   return (
     <Card>
       <Card.Img variant="top" src={img_base_url + movie.poster_path} />
@@ -25,7 +15,7 @@ const Movie = ({ movie }) => {
           {movie.owned ? (
             <span style={{ color: "green" }}>Owned</span>
           ) : (
-            <>Rp. {getPrice()}</>
+            <>Rp. {getPrice(movie)}</>
           )}
         </Card.Text>
         <Link

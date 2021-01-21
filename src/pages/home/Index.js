@@ -45,6 +45,8 @@ const Index = ({ ownedMovies }) => {
         pages={totalPages}
         currPage={currPage}
         setCurrPage={setCurrPage}
+        API_URL={API_URL}
+        API_KEY={API_KEY}
       />
       <MovieList movieList={movieList} />
     </>

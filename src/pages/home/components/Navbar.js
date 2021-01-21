@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const StreamNavbar = ({}) => {
+const StreamNavbar = ({ balance }) => {
   const [ownedMovies, setOwnedMovies] = useState([]);
-  const [balance, setBalance] = useState(100000);
+
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="sm">
