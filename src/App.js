@@ -4,7 +4,7 @@ import StreamNavbar from "./pages/home/components/Navbar";
 import Index from "./pages/home/Index";
 import MoviePage from "./pages/details/MoviePage";
 const API_URL = "https://api.themoviedb.org/3";
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.MY_API_KEY;
 
 function App() {
   const [ownedMovies, setOwnedMovies] = useState([]);
