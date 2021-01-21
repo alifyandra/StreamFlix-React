@@ -3,10 +3,9 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 const Movie = ({ movie }) => {
-  const img_base_url = "https://image.tmdb.org/t/p/w200/";
+  const img_base_url = "https://image.tmdb.org/t/p/w500/";
   function getPrice() {
     let rating = movie.vote_average;
-    console.log(rating);
     if (rating < 3) {
       return 3500;
     } else if (rating < 6) {
@@ -30,7 +29,15 @@ const Movie = ({ movie }) => {
           )}
         </Card.Text>
         <Link
-          to={"/" + movie.id + "-" + movie.original_title.replace(/\s+/g, "-")}
+          to={
+            "/" +
+            movie.id +
+            "-" +
+            movie.original_title
+              .replace(/[^\w\s]/gi, "")
+              .toLowerCase()
+              .replace(/\s+/g, "-")
+          }
         >
           <Button variant="primary">Details</Button>
         </Link>

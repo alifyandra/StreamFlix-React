@@ -5,9 +5,9 @@ const MovieList = ({ movieList }) => {
   return (
     <>
       <CardColumns>
-        {movieList.map((movie, index) => (
-          <Movie key={index} movie={movie} />
-        ))}
+        {movieList.map((movie, index) => {
+          return <Movie key={index} movie={movie} />;
+        })}
       </CardColumns>
     </>
   );
