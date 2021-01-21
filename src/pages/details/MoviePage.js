@@ -9,6 +9,7 @@ import Purchase from "./components/Purchase";
 import Cast from "./components/Cast";
 import Recommendations from "./components/Recommendations";
 import Duration from "./components/Duration";
+import Similar from "./components/Similar";
 
 const MoviePage = ({
   ownedMovies,
@@ -19,9 +20,12 @@ const MoviePage = ({
   API_KEY,
   balance,
   setBalance,
+  currPage,
+  setCurrPage,
 }) => {
   const [movie, setMovie] = useState({});
   const [recommendations, setRecommendations] = useState([]);
+  const [similar, setSimilar] = useState([]);
   const img_base_url = "https://image.tmdb.org/t/p/w500/";
   useEffect(() => {
     setPathName(window.location.pathname);
@@ -30,17 +34,8 @@ const MoviePage = ({
       pathName.slice(0, splitIndex),
       pathName.slice(splitIndex + 1),
     ];
-    console.log(
-      API_URL +
-        "/movie" +
-        movieId +
-        "?api_key=" +
-        API_KEY +
-        "&language=en-us" +
-        "&append_to_response=credits"
-    );
-    // Fetch general movie details
 
+    // Fetch general movie details
     axios
       .get(
         API_URL +
@@ -68,7 +63,21 @@ const MoviePage = ({
       .then((res) => {
         setRecommendations(res.data.results);
       });
-  }, [pathName]);
+
+    // Fetch similar movies
+    axios
+      .get(
+        API_URL +
+          "/movie" +
+          movieId +
+          "/similar?api_key=" +
+          API_KEY +
+          "&language=en-US&page=1"
+      )
+      .then((res) => {
+        setSimilar(res.data.results);
+      });
+  }, [pathName, currPage]);
   console.log(movie);
   return (
     <div className="container" style={{ padding: "1.5em" }}>
@@ -87,7 +96,16 @@ const MoviePage = ({
         balance={balance}
         setBalance={setBalance}
       />
-      <Recommendations recs={recommendations} />
+      <Recommendations
+        recs={recommendations}
+        setCurrPage={setCurrPage}
+        ownedMovies={ownedMovies}
+      />
+      <Similar
+        similar={similar}
+        setCurrPage={setCurrPage}
+        ownedMovies={ownedMovies}
+      />
     </div>
   );
 };

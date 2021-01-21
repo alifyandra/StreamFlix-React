@@ -4,10 +4,9 @@ import MovieList from "./components/MovieList";
 import axios from "axios";
 import Paginator from "./components/Paginator";
 
-const Index = ({ ownedMovies, API_URL, API_KEY }) => {
+const Index = ({ ownedMovies, API_URL, API_KEY, currPage, setCurrPage }) => {
   const [movieList, setMovieList] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
-  const [currPage, setCurrPage] = useState(1);
 
   function getPageQuery() {
     let search = window.location.search;

@@ -4,18 +4,17 @@ import CardGroup from "react-bootstrap/CardGroup";
 import Button from "react-bootstrap/Button";
 import getPrice from "../../../utils/getPrice";
 
-const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
+const Similar = ({ similar, setCurrPage, ownedMovies }) => {
   const img_base_url = "https://image.tmdb.org/t/p/w500/";
-  console.log(recs);
   return (
     <div style={{ marginTop: "1.5em" }}>
-      {recs.length != 0 ? (
-        <h4 style={{ padding: "1em" }}>Recommended Titles:</h4>
+      {similar.length != 0 ? (
+        <h4 style={{ padding: "1em" }}>Similar Titles:</h4>
       ) : (
         <></>
       )}
       <CardGroup>
-        {recs.slice(0, 3).map((rec, i) => {
+        {similar.slice(0, 3).map((sim, i) => {
           return (
             <Card
               style={{
@@ -25,12 +24,12 @@ const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
                 marginBottom: "10px",
               }}
             >
-              <Card.Img variant="top" src={img_base_url + rec.poster_path} />
+              <Card.Img variant="top" src={img_base_url + sim.poster_path} />
               <Card.Body>
-                <Card.Title>{rec.title}</Card.Title>
+                <Card.Title>{sim.title}</Card.Title>
                 <Card.Text>
-                  {!ownedMovies.includes(rec.id) ? (
-                    <>Rp. {getPrice(rec.vote_average)}</>
+                  {!ownedMovies.includes(sim.id) ? (
+                    <>Rp. {getPrice(sim.vote_average)}</>
                   ) : (
                     <span style={{ color: "green" }}>Owned</span>
                   )}
@@ -39,9 +38,9 @@ const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
                 <Link
                   to={
                     "/" +
-                    rec.id +
+                    sim.id +
                     "-" +
-                    rec.title
+                    sim.title
                       .replace(/[^\w\s]/gi, "")
                       .toLowerCase()
                       .replace(/\s+/g, "-")
@@ -65,4 +64,4 @@ const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
   );
 };
 
-export default Recommendations;
+export default Similar;

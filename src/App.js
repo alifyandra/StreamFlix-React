@@ -10,6 +10,7 @@ function App() {
   const [ownedMovies, setOwnedMovies] = useState([]);
   const [pathName, setPathName] = useState(window.location.pathname);
   const [balance, setBalance] = useState(100000);
+  const [currPage, setCurrPage] = useState(1);
 
   return (
     <Router>
@@ -26,6 +27,8 @@ function App() {
               API_KEY={API_KEY}
               balance={balance}
               setBalance={setBalance}
+              currPage={currPage}
+              setCurrPage={setCurrPage}
             />
           </Route>
           <Route path="/">
@@ -33,6 +36,8 @@ function App() {
               ownedMovies={ownedMovies}
               API_URL={API_URL}
               API_KEY={API_KEY}
+              currPage={currPage}
+              setCurrPage={setCurrPage}
             />
           </Route>
         </Switch>
