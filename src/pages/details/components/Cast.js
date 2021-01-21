@@ -4,7 +4,9 @@ const Cast = ({ casts }) => {
       <h5>Cast: </h5>
       <p style={{ fontSize: "12px" }}>
         {casts.map((cast, i) => {
-          return <>{cast.name}, </>;
+          return (
+            <>{i < casts.length - 1 ? <>{cast.name}, </> : <>{cast.name}</>}</>
+          );
         })}
       </p>
     </div>
