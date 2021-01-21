@@ -6,8 +6,7 @@ import Paginator from "./components/Paginator";
 const API_URL = "https://api.themoviedb.org/3";
 const API_KEY = "694f210a11567b3472a88c95b053d7e7";
 
-const Index = () => {
-  const [ownedMovies, setOwnedMovies] = useState([]);
+const Index = ({ ownedMovies }) => {
   const [movieList, setMovieList] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currPage, setCurrPage] = useState(1);

@@ -1,4 +1,5 @@
-const MoviePage = ({ movie }) => {
+const MoviePage = ({ queryParam }) => {
+  console.log(queryParam);
   return <></>;
 };
 

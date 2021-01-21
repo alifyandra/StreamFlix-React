@@ -26,7 +26,11 @@ const Paginator = ({ pages, currPage, setCurrPage }) => {
     }
   }, [currPage, pages]);
 
-  return <Pagination>{pageNumber}</Pagination>;
+  return (
+    <div style={{ overflowX: "scroll" }}>
+      <Pagination>{pageNumber}</Pagination>
+    </div>
+  );
 };
 
 export default Paginator;
