@@ -6,9 +6,14 @@ import getPrice from "../../../utils/getPrice";
 
 const Recommendations = ({ recs }) => {
   const img_base_url = "https://image.tmdb.org/t/p/w500/";
+  console.log(recs);
   return (
     <div style={{ marginTop: "1.5em" }}>
-      <h4 style={{ padding: "1em" }}>Recommended Titles:</h4>
+      {recs.length != 0 ? (
+        <h4 style={{ padding: "1em" }}>Recommended Titles:</h4>
+      ) : (
+        <></>
+      )}
       <CardGroup>
         {recs.slice(0, 5).map((rec, i) => {
           return (

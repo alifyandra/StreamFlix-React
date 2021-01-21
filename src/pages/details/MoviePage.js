@@ -8,6 +8,7 @@ import Description from "./components/Description";
 import Purchase from "./components/Purchase";
 import Cast from "./components/Cast";
 import Recommendations from "./components/Recommendations";
+import Duration from "./components/Duration";
 
 const MoviePage = ({
   ownedMovies,
@@ -74,6 +75,7 @@ const MoviePage = ({
       <Title movieTitle={movie.original_title} />
       <Poster imgUrl={movie.poster_path} />
       <Rating rating={movie.vote_average} />
+      <Duration duration={movie.runtime} />
       <Description desc={movie.overview ? movie.overview : "No description"} />
       <Cast casts={movie?.credits?.cast ?? []} />
       <Purchase
