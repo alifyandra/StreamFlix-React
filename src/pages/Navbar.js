@@ -7,14 +7,32 @@ const StreamNavbar = ({ balance }) => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="sm">
+      <Navbar bg="danger" variant="dark" expand="sm">
         <Link to="/">
-          <Navbar.Brand>StreamFlix</Navbar.Brand>
+          <Navbar.Brand>
+            <span
+              style={{
+                fontFamily: "'Freckle Face', cursive",
+                fontSize: "1.8em",
+              }}
+            >
+              StreamFlix
+            </span>{" "}
+            <span style={{ fontSize: "10px" }}>
+              <i>powered by TMDb</i>
+            </span>
+          </Navbar.Brand>
         </Link>
         <Nav className="mr-auto"></Nav>
         <Nav>
-          <Nav.Item style={{ color: "white", fontWeight: "400" }}>
-            Balance: Rp. {balance}
+          <Nav.Item
+            style={{
+              color: "white",
+              fontWeight: "400",
+              fontFamily: "'Open Sans', sans-serif",
+            }}
+          >
+            <b>Balance:</b> Rp. {balance.toLocaleString()}
           </Nav.Item>
         </Nav>
       </Navbar>

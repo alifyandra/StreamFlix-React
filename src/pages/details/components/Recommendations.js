@@ -30,7 +30,7 @@ const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
                 <Card.Title>{rec.title}</Card.Title>
                 <Card.Text>
                   {!ownedMovies.includes(rec.id) ? (
-                    <>Rp. {getPrice(rec)}</>
+                    <>Rp. {getPrice(rec).toLocaleString()}</>
                   ) : (
                     <span style={{ color: "green" }}>Owned</span>
                   )}
@@ -48,7 +48,7 @@ const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
                   }
                 >
                   <Button
-                    variant="primary"
+                    variant="danger"
                     onClick={() => {
                       setCurrPage(window.location.pathname);
                     }}

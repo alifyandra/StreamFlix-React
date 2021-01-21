@@ -15,7 +15,7 @@ const Movie = ({ movie }) => {
           {movie.owned ? (
             <span style={{ color: "green" }}>Owned</span>
           ) : (
-            <>Rp. {getPrice(movie)}</>
+            <>Rp. {getPrice(movie).toLocaleString()}</>
           )}
         </Card.Text>
         <Link
@@ -29,7 +29,7 @@ const Movie = ({ movie }) => {
               .replace(/\s+/g, "-")
           }
         >
-          <Button variant="primary">Details</Button>
+          <Button variant="danger">Details</Button>
         </Link>
       </Card.Body>
     </Card>

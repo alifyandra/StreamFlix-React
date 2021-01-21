@@ -31,7 +31,7 @@ const Purchase = ({
               }
             }}
           >
-            Rp. {price}
+            Rp. {price.toLocaleString()}
           </Button>
         </div>
       )}

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import StreamNavbar from "./pages/Navbar";
 import Index from "./pages/home/Index";
 import MoviePage from "./pages/details/MoviePage";
+import Footer from "./pages/Footer";
+import "./App.css";
 const API_URL = "https://api.themoviedb.org/3";
 const API_KEY = "694f210a11567b3472a88c95b053d7e7";
 
@@ -42,6 +44,7 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }

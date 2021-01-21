@@ -29,7 +29,7 @@ const Similar = ({ similar, setCurrPage, ownedMovies }) => {
                 <Card.Title>{sim.title}</Card.Title>
                 <Card.Text>
                   {!ownedMovies.includes(sim.id) ? (
-                    <>Rp. {getPrice(sim)}</>
+                    <>Rp. {getPrice(sim).toLocaleString()}</>
                   ) : (
                     <span style={{ color: "green" }}>Owned</span>
                   )}
@@ -47,7 +47,7 @@ const Similar = ({ similar, setCurrPage, ownedMovies }) => {
                   }
                 >
                   <Button
-                    variant="primary"
+                    variant="danger"
                     onClick={() => {
                       setCurrPage(window.location.pathname);
                     }}
