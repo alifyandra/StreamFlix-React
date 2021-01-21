@@ -3,10 +3,8 @@ import Header from "./components/Header";
 import MovieList from "./components/MovieList";
 import axios from "axios";
 import Paginator from "./components/Paginator";
-const API_URL = "https://api.themoviedb.org/3";
-const API_KEY = "694f210a11567b3472a88c95b053d7e7";
 
-const Index = ({ ownedMovies }) => {
+const Index = ({ ownedMovies, API_URL, API_KEY }) => {
   const [movieList, setMovieList] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currPage, setCurrPage] = useState(1);
@@ -45,8 +43,6 @@ const Index = ({ ownedMovies }) => {
         pages={totalPages}
         currPage={currPage}
         setCurrPage={setCurrPage}
-        API_URL={API_URL}
-        API_KEY={API_KEY}
       />
       <MovieList movieList={movieList} />
     </>
