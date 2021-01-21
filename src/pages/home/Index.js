@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../components/Header";
-import MovieList from "../../components/MovieList";
+import Header from "./components/Header";
+import MovieList from "./components/MovieList";
 import axios from "axios";
-import Paginator from "../../components/Paginator";
+import Paginator from "./components/Paginator";
 const API_URL = "https://api.themoviedb.org/3";
 const API_KEY = "694f210a11567b3472a88c95b053d7e7";
 
@@ -35,6 +35,7 @@ const Index = () => {
           film.owned = ownedMovies.includes(film.id);
         });
         setMovieList(res.data.results);
+        setCurrPage(getPageQuery);
       });
   }, [ownedMovies, currPage]);
 

@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useHistory,
-} from "react-router-dom";
-import StreamNavbar from "./components/Navbar";
-import Header from "./components/Header";
-import MovieList from "./components/MovieList";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import StreamNavbar from "./pages/Navbar";
 import Index from "./pages/home/Index";
-import Pagination from "react-bootstrap/Pagination";
-import axios from "axios";
 
 function App() {
   return (

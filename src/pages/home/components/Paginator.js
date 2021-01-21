@@ -11,7 +11,6 @@ const Paginator = ({ pages, currPage, setCurrPage }) => {
   };
 
   useEffect(() => {
-    console.log(pages, currPage);
     let items = [];
     for (let number = 1; number <= pages; number++) {
       items.push(
@@ -24,10 +23,8 @@ const Paginator = ({ pages, currPage, setCurrPage }) => {
         </Pagination.Item>
       );
       setPageNumber(items);
-      console.log(items);
     }
   }, [currPage, pages]);
-  console.log(pageNumber);
 
   return <Pagination>{pageNumber}</Pagination>;
 };
