@@ -25,7 +25,6 @@ const Index = ({ ownedMovies, API_URL, API_KEY, currPage, setCurrPage }) => {
           "&region=id"
       )
       .then((res) => {
-        console.log(res);
         setTotalPages(res.data.total_pages);
         res.data.results.map((film) => {
           film.owned = ownedMovies.includes(film.id);

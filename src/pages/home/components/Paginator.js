@@ -27,7 +27,7 @@ const Paginator = ({ pages, currPage, setCurrPage }) => {
   }, [currPage, pages]);
 
   return (
-    <div style={{ overflowX: "scroll" }}>
+    <div style={{ overflowX: "scroll", padding: "0em 15vw" }}>
       <Pagination>{pageNumber}</Pagination>
     </div>
   );
