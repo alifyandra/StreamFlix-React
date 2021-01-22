@@ -12,7 +12,7 @@ const StreamNavbar = ({ balance }) => {
           <Navbar.Brand>
             <span
               style={{
-                fontFamily: "'Freckle Face', cursive",
+                fontFamily: "'Freckle Face', sans-serif",
                 fontSize: "1.8em",
               }}
             >
