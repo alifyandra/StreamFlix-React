@@ -26,6 +26,7 @@ const MoviePage = ({
   const [movie, setMovie] = useState({});
   const [recommendations, setRecommendations] = useState([]);
   const [similar, setSimilar] = useState([]);
+
   useEffect(() => {
     setPathName(window.location.pathname);
     var splitIndex = pathName.indexOf("-");
@@ -77,6 +78,7 @@ const MoviePage = ({
         setSimilar(res.data.results);
       });
   }, [pathName, currPage]);
+
   return (
     <div className="container" style={{ padding: "1.5em" }}>
       <Title movieTitle={movie.original_title} />

@@ -7,9 +7,9 @@ const Header = () => {
         fontFamily: "'Open Sans', sans-serif",
       }}
     >
-      <h3 style={{ textAlign: "center", fontWeight: "400" }}>
+      <h4 style={{ textAlign: "center", fontWeight: "400" }}>
         Movies Now Playing in Indonesia 🇮🇩
-      </h3>
+      </h4>
     </div>
   );
 };

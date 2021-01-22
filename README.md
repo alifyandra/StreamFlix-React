@@ -1,6 +1,8 @@
 # StreamFlix Mini Project
 
-This is a React.js app powered by the TMDb API that displays movies currently playing in Indonesia where a User has an initial balance of Rp. 100,000 and may buy any of the movies which are priced according to their average ratings.
+This is a responsive React.js app powered by the TMDb API that displays movies currently playing in Indonesia where a User has an initial balance of Rp. 100,000 and may buy any of the movies which are priced according to their average ratings.
+
+Testing code is located in the App.test.js file.
 
 ![Screen Shot 2021-01-22 at 22.15.37](./screenshots/home.png)
 

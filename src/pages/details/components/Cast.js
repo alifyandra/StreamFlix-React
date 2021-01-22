@@ -1,13 +1,17 @@
 const Cast = ({ casts }) => {
   return (
-    <div style={{ padding: "1em 12vw 0em 12vw" }}>
+    <div style={{ padding: "1em 11vw 0em 11vw" }}>
       <h5>Cast: </h5>
       <p style={{ fontSize: "12px", color: "#747474" }}>
         {casts.map((cast, i) => {
           return (
-            <span key={i}>
-              {i < casts.length - 1 ? <>{cast.name}, </> : <>{cast.name}</>}
-            </span>
+            <>
+              {i < casts.length - 1 ? (
+                <span key={i}>{cast.name}, </span>
+              ) : (
+                <span>{cast.name}</span>
+              )}
+            </>
           );
         })}
       </p>
