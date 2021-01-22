@@ -4,7 +4,7 @@ This is a React.js app powered by the TMDb API that displays movies currently pl
 
 ![Screen Shot 2021-01-22 at 22.15.37](./screenshots/home.png)
 
-![movie](/Users/alifyandra/Documents/PersonalProjects/WebDev/react/flitts-mini-project/screenshots/movie.png)
+![movie](./screenshots/movie.png)
 
 
 
