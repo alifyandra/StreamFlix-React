@@ -1,22 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import React from "react";
+import { render, screen, waitFor } from "@testing-library/react";
 import App from "./App";
 import getPrice from "./utils/getPrice";
-
-// test("renders learn react link", () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/StreamFlix/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-
-test("getPrice function works", () => {
-  const ratings = [2.4, 4.3, 7, 9.2];
-  const prices = [3500, 8250, 16350, 21250];
-  ratings.map((r, i) => {
-    let movie = {};
-    movie.vote_average = r;
-    expect(getPrice(movie)).toBe(prices[i]);
-  });
-});
 
 test("essential <App /> components render", () => {
   const { getByText } = render(<App />);
@@ -30,4 +15,23 @@ test("essential <App /> components render", () => {
   expect(footer).toBeInTheDocument();
 });
 
-test("initial balance", () => {});
+test("getPrice function works", () => {
+  const ratings = [2.4, 4.3, 7, 9.2];
+  const prices = [3500, 8250, 16350, 21250];
+  ratings.map((r, i) => {
+    let movie = {};
+    movie.vote_average = r;
+    expect(getPrice(movie)).toEqual(prices[i]);
+  });
+});
+
+test("initial balance", () => {
+  // render(<App />);
+  // expect(App.balance).toEqual(100000);
+  const setBalance = jest.fn();
+  const wrapper = mount(<App onClick={setBalance} />);
+  const handleClick = jest.spyOn(React, "useState");
+  handleClick.mockImplementation((balance) => [balance, setBalance]);
+
+  wrapper.find();
+});

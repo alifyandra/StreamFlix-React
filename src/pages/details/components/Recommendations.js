@@ -18,6 +18,7 @@ const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
         {recs.slice(0, 3).map((rec, i) => {
           return (
             <Card
+              key={i}
               style={{
                 width: "16rem",
                 margin: "0 auto",

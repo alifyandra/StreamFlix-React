@@ -4,7 +4,7 @@ import MovieList from "./components/MovieList";
 import axios from "axios";
 import Paginator from "./components/Paginator";
 
-const Index = ({ ownedMovies, API_URL, API_KEY, currPage, setCurrPage }) => {
+const Home = ({ ownedMovies, API_URL, API_KEY, currPage, setCurrPage }) => {
   const [movieList, setMovieList] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
 
@@ -26,7 +26,7 @@ const Index = ({ ownedMovies, API_URL, API_KEY, currPage, setCurrPage }) => {
       )
       .then((res) => {
         setTotalPages(res.data.total_pages);
-        res.data.results.map((film) => {
+        res.data.results.forEach((film) => {
           film.owned = ownedMovies.includes(film.id);
         });
         setMovieList(res.data.results);
@@ -47,4 +47,4 @@ const Index = ({ ownedMovies, API_URL, API_KEY, currPage, setCurrPage }) => {
   );
 };
 
-export default Index;
+export default Home;

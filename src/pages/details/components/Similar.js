@@ -17,6 +17,7 @@ const Similar = ({ similar, setCurrPage, ownedMovies }) => {
         {similar.slice(0, 3).map((sim, i) => {
           return (
             <Card
+              key={i}
               style={{
                 width: "16rem",
                 margin: "0 auto",

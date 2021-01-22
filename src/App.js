@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import StreamNavbar from "./pages/Navbar";
-import Index from "./pages/home/Index";
+import Home from "./pages/home/Home";
 import MoviePage from "./pages/details/MoviePage";
 import Footer from "./pages/Footer";
 import "./App.css";
@@ -34,7 +34,7 @@ function App() {
             />
           </Route>
           <Route path="/">
-            <Index
+            <Home
               ownedMovies={ownedMovies}
               API_URL={API_URL}
               API_KEY={API_KEY}
