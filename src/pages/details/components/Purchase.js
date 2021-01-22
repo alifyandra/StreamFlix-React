@@ -20,6 +20,7 @@ const Purchase = ({
         <div>
           <h6>Buy now for</h6>
           <Button
+            data-testid="buy"
             variant="success"
             size="lg"
             onClick={() => {

@@ -6,7 +6,6 @@ import getPrice from "../../../utils/getPrice";
 
 const Recommendations = ({ recs, setCurrPage, ownedMovies }) => {
   const img_base_url = "https://image.tmdb.org/t/p/w500/";
-  console.log(recs);
   return (
     <div style={{ marginTop: "1.5em" }}>
       {recs.length != 0 ? (

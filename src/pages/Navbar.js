@@ -28,6 +28,7 @@ const StreamNavbar = ({ balance }) => {
               fontWeight: "400",
               fontFamily: "'Open Sans', sans-serif",
             }}
+            data-testid="balance"
           >
             <b>Balance:</b> Rp. {balance.toLocaleString()}
           </Nav.Item>

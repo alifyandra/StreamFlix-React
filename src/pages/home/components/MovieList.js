@@ -6,7 +6,7 @@ const MovieList = ({ movieList }) => {
     <>
       <CardColumns>
         {movieList.map((movie, index) => {
-          return <Movie key={index} movie={movie} />;
+          return <Movie key={index} movie={movie} index={index} />;
         })}
       </CardColumns>
     </>

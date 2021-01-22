@@ -5,7 +5,9 @@ const Cast = ({ casts }) => {
       <p style={{ fontSize: "12px", color: "#747474" }}>
         {casts.map((cast, i) => {
           return (
-            <>{i < casts.length - 1 ? <>{cast.name}, </> : <>{cast.name}</>}</>
+            <span key={i}>
+              {i < casts.length - 1 ? <>{cast.name}, </> : <>{cast.name}</>}
+            </span>
           );
         })}
       </p>
