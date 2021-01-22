@@ -49,5 +49,5 @@ test("buy movie decreases balance", async () => {
     fireEvent.click(getByTestId("buy"));
   });
 
-  expect(oldBalance.innerHTML).not.toBe(getByTestId("balance").innerHTML);
+  expect(oldBalance).not.toBe(getByTestId("balance").innerHTML);
 });
